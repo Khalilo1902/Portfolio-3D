@@ -42,7 +42,7 @@ interface IFeedbackCardProps {
 );
 
 const Feedbacks = () => {
-  const { testimonials, addTestimonial, fetchTestimonials,isSubmitting,setIsSubmitting } = useTestimonials();
+  const { testimonials, addTestimonial,setTestimonials, fetchTestimonials,isSubmitting,setIsSubmitting } = useTestimonials();
   const [formData, setFormData] = useState({
     _id: "",
     name: "",
@@ -75,7 +75,9 @@ const Feedbacks = () => {
         company: "",
         image: "",
       });
-      fetchTestimonials();
+     testimonials.push(formData)
+     
+     setTestimonials(testimonials)
       setSuccessMessage("Testimonial successfully added!");
         } catch (error) {
       console.error("Error adding testimonial:", error);
@@ -86,7 +88,7 @@ const Feedbacks = () => {
 
   useEffect(() => {
     fetchTestimonials();
-  }, [fetchTestimonials]);
+  }, []);
 
   return (
     <div className=" mt-12 bg-black-100 rounded-[20px]">
