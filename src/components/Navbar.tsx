@@ -1,7 +1,7 @@
 import { styles } from "../styles";
 import { navLinks } from "../constans";
 
-import logo from "../assets/logo.svg"
+import logo from "../assets/logo1.svg"
 import menu from "../assets/menu.svg"
 import close from "../assets/close.svg"
 
