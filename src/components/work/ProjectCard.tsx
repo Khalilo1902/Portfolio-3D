@@ -21,12 +21,14 @@ interface IProjectsCardProps {
           transitionSpeed={450}
           className=" bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
         >
-          <div className=" relative w-full h-[230px]">
+          <div className=" relative w-full h-[230px] cursor-pointer">
+            <a href="https://khalil-dev.me" target="_blank">
             <img
-              className=" w-full h-full object-cover rounded-2xl"
+              className=" w-full h-full object-cover rounded-2xl "
               src={project.image}
               alt={project.name}
             />
+            </a>
             <div className=" absolute inset-0 flex justify-end m-3 card-img_hover">
               <div
                 className=" black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"

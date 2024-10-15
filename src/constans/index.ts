@@ -19,9 +19,8 @@ import htmlCssJs from "../assets/company/htmlCssJs.jpg"
 import htmlIcon from "../assets/company/html.png"
 import reactTs from "../assets/company/reactTs.png"
 import nodeJs from "../assets/company/nodeJs.jpg"
-import carrent from "../assets/carrent.png"
-import tripguide from "../assets/tripguide.png"
-import jobit from "../assets/jobit.png"
+import cryptoBild from "../assets/cryptoBild.png"
+
 
 
 
@@ -199,7 +198,7 @@ import jobit from "../assets/jobit.png"
   const projects = [
     {
       id: "1",
-      name: "Orosia.online",
+      name: "crypto-curruncy",
       description:
         "Web-based platform that allows users to search, Coin , and analyse Chart .",
       tags: [
@@ -219,59 +218,10 @@ import jobit from "../assets/jobit.png"
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,  // Vergewissere dich, dass `carrent` korrekt importiert ist
+      image: cryptoBild, 
       source_code_link: "https://github.com/Khalilo1902?tab=repositories",
     },
-    {
-      id: "2",
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          id: "4",
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          id: "5",
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          id: "6",
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,  // Vergewissere dich, dass `jobit` korrekt importiert ist
-      source_code_link: "https://github.com/Khalilo1902?tab=repositories",
-    },
-    {
-      id: "3",
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          id: "7",
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          id: "8",
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          id: "9",
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,  // Vergewissere dich, dass `tripguide` korrekt importiert ist
-      source_code_link: "https://github.com/Khalilo1902?tab=repositories",
-    },
+  
   ];
   
   
