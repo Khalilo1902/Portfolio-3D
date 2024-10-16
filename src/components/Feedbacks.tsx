@@ -63,13 +63,11 @@ const Feedbacks = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
     setIsSubmitting(true); 
     try {
-      // Add the new testimonial via API
       await addTestimonial(formData);
-  
-      // Clear the form after submission
       setFormData({
         _id: "",
         name: "",
@@ -78,19 +76,16 @@ const Feedbacks = () => {
         company: "",
         image: "",
       });
-  
-      // Update the testimonials array immutably
-      setTestimonials(prevTestimonials => [...prevTestimonials, formData]);
-  
-      // Show success message
+     testimonials.push(formData)
+     
+     setTestimonials(testimonials)
       setSuccessMessage("Testimonial successfully added!");
-    } catch (error) {
+        } catch (error) {
       console.error("Error adding testimonial:", error);
-    } finally {
-      setIsSubmitting(false);
+    }finally{
+      setIsSubmitting(false)
     }
   };
-  
 
   useEffect(() => {
     fetchTestimonials();
@@ -105,14 +100,13 @@ const Feedbacks = () => {
         </motion.div>
       </div>
       <div className={` ${styles.paddingX} flex flex-wrap gap-7 mt-20 pb-14`}>
-      {Array.isArray(testimonials) && testimonials.map((testimonial, index) => (
-  <FeedbackCard
-    key={testimonial._id}
-    index={index}
-    testimonials={testimonial}
-  />
-))}
-
+        {testimonials.map((testimonial, index) => (
+          <FeedbackCard
+            key={testimonial._id}
+            index={index}
+            testimonials={testimonial}
+          />
+        ))}
       </div>
 
       <div className=" flex justify-center p-2">

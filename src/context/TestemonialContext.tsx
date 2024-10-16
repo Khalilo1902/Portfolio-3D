@@ -9,7 +9,8 @@ interface TestimonialContextType {
     setTestimonials: React.Dispatch<React.SetStateAction<ITestimonials[]>>;
     setIsSubmitting:React.Dispatch<React.SetStateAction<boolean>>
     isSubmitting:boolean;
-  
+    setIsTestimonialsAdded: React.Dispatch<React.SetStateAction<boolean>>
+    isTestimonialsAdded: boolean
 }
 
 const TestimonialsContext = createContext<TestimonialContextType | undefined>(
@@ -27,19 +28,13 @@ export const useTestimonials = () => {
 export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
- 
+  const [isTestimonialsAdded,setIsTestimonialsAdded] = useState(false)
 
 
   const fetchTestimonials = async () => {
     try {
       const response = await axios.get("https://portfolio.khalil-dev.me/feedback/all");
-      if (Array.isArray(response.data)) {
-        setTestimonials(response.data);
-      } else {
-        console.error("Expected an array of testimonials, but got:", response.data);
-        setTestimonials([]);  // set an empty array if the data is not an array
-      }
-      
+      setTestimonials(response.data);
     } catch (error) {
       console.error("Error fetching testimonials:", error);
     }
@@ -47,17 +42,17 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   useEffect(() => {
     fetchTestimonials();
-  }, [testimonials]);
+  }, [isTestimonialsAdded,setIsTestimonialsAdded]);
 
   const addTestimonial = async (newTestimonial: ITestimonials) => {
     try {
       await axios.post("https://portfolio.khalil-dev.me/feedback/add", newTestimonial);
-       
+       setIsTestimonialsAdded(true)
       await fetchTestimonials();  
 
     } catch (error) {
       console.error("Error adding testimonial:", error);
-    
+      setIsTestimonialsAdded(false)
     }
   };
 
@@ -65,7 +60,7 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
   
 
   return (
-    <TestimonialsContext.Provider value={{ testimonials, fetchTestimonials, addTestimonial, setTestimonials ,isSubmitting,setIsSubmitting}}>
+    <TestimonialsContext.Provider value={{ testimonials, fetchTestimonials, addTestimonial, setTestimonials ,isSubmitting,setIsSubmitting,setIsTestimonialsAdded,isTestimonialsAdded}}>
       {children}
     </TestimonialsContext.Provider>
   );
