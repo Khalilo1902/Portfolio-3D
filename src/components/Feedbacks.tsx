@@ -43,6 +43,7 @@ interface IFeedbackCardProps {
 
 const Feedbacks = () => {
   const { testimonials, addTestimonial,setTestimonials, fetchTestimonials,isSubmitting,setIsSubmitting } = useTestimonials();
+
   const [formData, setFormData] = useState({
     _id: "",
     name: "",
@@ -62,11 +63,13 @@ const Feedbacks = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-
     e.preventDefault();
     setIsSubmitting(true); 
     try {
+      // Add the new testimonial via API
       await addTestimonial(formData);
+  
+      // Clear the form after submission
       setFormData({
         _id: "",
         name: "",
@@ -75,16 +78,19 @@ const Feedbacks = () => {
         company: "",
         image: "",
       });
-     testimonials.push(formData)
-     
-     setTestimonials(testimonials)
+  
+      // Update the testimonials array immutably
+      setTestimonials(prevTestimonials => [...prevTestimonials, formData]);
+  
+      // Show success message
       setSuccessMessage("Testimonial successfully added!");
-        } catch (error) {
+    } catch (error) {
       console.error("Error adding testimonial:", error);
-    }finally{
-      setIsSubmitting(false)
+    } finally {
+      setIsSubmitting(false);
     }
   };
+  
 
   useEffect(() => {
     fetchTestimonials();

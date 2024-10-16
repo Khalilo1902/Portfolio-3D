@@ -41,7 +41,7 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   useEffect(() => {
     fetchTestimonials();
-  }, []);
+  }, [testimonials]);
 
   const addTestimonial = async (newTestimonial: ITestimonials) => {
     try {
