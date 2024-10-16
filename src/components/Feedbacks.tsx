@@ -5,7 +5,7 @@ import { fadeIn, textVariant } from "../utils/motions";
 import { ITestimonials } from "../interface";
 import SectionWrapper from "../hoc/SectionWrapper";
 import { useTestimonials } from "../context/TestemonialContext";
-import {   useState } from "react";
+import {  useEffect, useState } from "react";
 
 interface IFeedbackCardProps {
   testimonials: ITestimonials;
@@ -42,7 +42,7 @@ interface IFeedbackCardProps {
 );
 
 const Feedbacks = () => {
-  const { testimonials, addTestimonial,setTestimonials,isSubmitting,setIsSubmitting } = useTestimonials();
+  const { testimonials, addTestimonial,setTestimonials, fetchTestimonials,isSubmitting,setIsSubmitting } = useTestimonials();
   const [formData, setFormData] = useState({
     _id: "",
     name: "",
@@ -86,7 +86,9 @@ const Feedbacks = () => {
     }
   };
 
-
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
 
   return (
     <div className=" mt-12 bg-black-100 rounded-[20px]">
