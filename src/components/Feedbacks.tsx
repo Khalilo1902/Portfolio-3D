@@ -105,13 +105,14 @@ const Feedbacks = () => {
         </motion.div>
       </div>
       <div className={` ${styles.paddingX} flex flex-wrap gap-7 mt-20 pb-14`}>
-        {testimonials.map((testimonial, index) => (
-          <FeedbackCard
-            key={testimonial._id}
-            index={index}
-            testimonials={testimonial}
-          />
-        ))}
+      {Array.isArray(testimonials) && testimonials.map((testimonial, index) => (
+  <FeedbackCard
+    key={testimonial._id}
+    index={index}
+    testimonials={testimonial}
+  />
+))}
+
       </div>
 
       <div className=" flex justify-center p-2">

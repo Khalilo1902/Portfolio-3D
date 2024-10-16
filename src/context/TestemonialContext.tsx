@@ -33,7 +33,13 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const fetchTestimonials = async () => {
     try {
       const response = await axios.get("https://portfolio.khalil-dev.me/feedback/all");
-      setTestimonials(response.data);
+      if (Array.isArray(response.data)) {
+        setTestimonials(response.data);
+      } else {
+        console.error("Expected an array of testimonials, but got:", response.data);
+        setTestimonials([]);  // set an empty array if the data is not an array
+      }
+      
     } catch (error) {
       console.error("Error fetching testimonials:", error);
     }
