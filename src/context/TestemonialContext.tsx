@@ -9,8 +9,7 @@ interface TestimonialContextType {
     setTestimonials: React.Dispatch<React.SetStateAction<ITestimonials[]>>;
     setIsSubmitting:React.Dispatch<React.SetStateAction<boolean>>
     isSubmitting:boolean;
-    setIsTestimonialsAdded: React.Dispatch<React.SetStateAction<boolean>>
-    isTestimonialsAdded: boolean
+  
 }
 
 const TestimonialsContext = createContext<TestimonialContextType | undefined>(
@@ -28,7 +27,7 @@ export const useTestimonials = () => {
 export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [testimonials, setTestimonials] = useState<ITestimonials[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isTestimonialsAdded,setIsTestimonialsAdded] = useState(false)
+ 
 
 
   const fetchTestimonials = async () => {
@@ -42,17 +41,17 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   useEffect(() => {
     fetchTestimonials();
-  }, [isTestimonialsAdded,setIsTestimonialsAdded]);
+  }, []);
 
   const addTestimonial = async (newTestimonial: ITestimonials) => {
     try {
       await axios.post("https://portfolio.khalil-dev.me/feedback/add", newTestimonial);
-       setIsTestimonialsAdded(true)
+       
       await fetchTestimonials();  
 
     } catch (error) {
       console.error("Error adding testimonial:", error);
-      setIsTestimonialsAdded(false)
+    
     }
   };
 
@@ -60,7 +59,7 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
   
 
   return (
-    <TestimonialsContext.Provider value={{ testimonials, fetchTestimonials, addTestimonial, setTestimonials ,isSubmitting,setIsSubmitting,setIsTestimonialsAdded,isTestimonialsAdded}}>
+    <TestimonialsContext.Provider value={{ testimonials, fetchTestimonials, addTestimonial, setTestimonials ,isSubmitting,setIsSubmitting}}>
       {children}
     </TestimonialsContext.Provider>
   );
