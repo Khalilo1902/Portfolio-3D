@@ -22,9 +22,8 @@ const Hero = () => {
           </p>
         </div>
       </div>
-     <div className=" w-full h-full ">
-
-      
+     <div className=" w-full  h-full absolute top-24 ">
+         
      <ComputersCanvas />
      </div>
 
