@@ -32,6 +32,7 @@ export interface ITag {
     tags: ITag[];
     image: string; 
     source_code_link: string;
+    link:string
   }
   
   export interface ITestimonials {

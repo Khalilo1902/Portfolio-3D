@@ -13,7 +13,7 @@ interface IProjectsCardProps {
 const ProjectCard: React.FC<IProjectsCardProps> = ({ project, index }: IProjectsCardProps) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <NavLink to="https://khalil-dev.me" target="_blank" rel="noopener noreferrer">
+      <NavLink to={project.link} target="_blank" rel="noopener noreferrer">
         <Tilt
           tiltMaxAngleX={45}
           tiltMaxAngleY={45}

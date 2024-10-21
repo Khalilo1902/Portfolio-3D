@@ -20,7 +20,7 @@ import htmlIcon from "../assets/company/html.png"
 import reactTs from "../assets/company/reactTs.png"
 import nodeJs from "../assets/company/nodeJs.jpg"
 import cryptoBild from "../assets/cryptoBild.png"
-
+import aehBild from "../assets/AEH.png"
 
 
 
@@ -220,6 +220,28 @@ import cryptoBild from "../assets/cryptoBild.png"
       ],
       image: cryptoBild, 
       source_code_link: "https://github.com/Khalilo1902?tab=repositories",
+      link:"https://khalil-dev.me"
+    },
+    {
+      id: "2",
+      name: "AEH",
+      description:
+        "Web-based platform that helps people with disabilities.",
+      tags: [
+        {
+          id: "1",
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          id: "2",
+          name: "tailwind",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: aehBild, 
+      source_code_link: "https://github.com/Khalilo1902?tab=repositories",
+      link:"https://aeh-collaboration-medlaaribis-projects.vercel.app/organisation"
     },
   
   ];
