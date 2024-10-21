@@ -220,7 +220,7 @@ import aehBild from "../assets/AEH.png"
       ],
       image: cryptoBild, 
       source_code_link: "https://github.com/Khalilo1902?tab=repositories",
-      link:"https://khalil-dev.me"
+      link:"https://khalil-dev.me",
     },
     {
       id: "2",
@@ -241,7 +241,7 @@ import aehBild from "../assets/AEH.png"
       ],
       image: aehBild, 
       source_code_link: "https://github.com/Khalilo1902?tab=repositories",
-      link:"https://aeh-collaboration-medlaaribis-projects.vercel.app/organisation"
+      link:"https://aeh-collaboration-medlaaribis-projects.vercel.app/organisation",
     },
   
   ];
