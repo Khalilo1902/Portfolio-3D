@@ -26,9 +26,6 @@ import aehBild from "../assets/AEH.png"
 
 
 
-
-
-
   
   export const navLinks = [
     {
