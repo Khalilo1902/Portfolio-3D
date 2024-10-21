@@ -20,7 +20,7 @@ import htmlIcon from "../assets/company/html.png"
 import reactTs from "../assets/company/reactTs.png"
 import nodeJs from "../assets/company/nodeJs.jpg"
 import cryptoBild from "../assets/cryptoBild.png"
-import aehBild from "../assets/AEH.png"
+import aehBild from "../assets/aeh.png"
 
 
 
