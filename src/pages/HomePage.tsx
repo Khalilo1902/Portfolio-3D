@@ -11,8 +11,6 @@ import {
 } from "../components";
 
 
-
-
 const HomePage = () => {
 
 
