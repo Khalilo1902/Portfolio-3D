@@ -10,28 +10,26 @@ import {
   StarsCanvas,
 } from "../components";
 
-
 const HomePage = () => {
-
-
   return (
-    <div className="relative z-0 bg-primary">
-      <div className="blue-yellow-gradient">
-        <Navbar />
-        <Hero />
+  
+      <div className="relative z-0 bg-primary">
+        <div className="">
+          <Navbar />
+          <Hero />
+        </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className="relative z-0">
+          <Contact />
+          <StarsCanvas />
+        </div>
       </div>
-      <About />
-      <Experience />
-      <Tech />
-      <Works />
-      <Feedbacks />
-      <div className="relative z-0">
-        <Contact />
-        <StarsCanvas /> 
-      </div>
-      
-    </div>
+  
   );
 };
 
-export default HomePage;
+export default HomePage
