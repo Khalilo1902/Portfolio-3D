@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     hmr: {
-      protocol: 'wss',  // Verwende 'wss' für sichere WebSocket-Verbindungen
+      protocol: 'ws',  // Verwende 'wss' für sichere WebSocket-Verbindungen
       host: 'khalil-webdev.de',  // Dein Hostname
       port: 3505,  // Der Port, auf dem der WebSocket-Server läuft
     },
