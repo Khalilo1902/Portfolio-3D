@@ -33,7 +33,7 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   const fetchTestimonials = async () => {
     try {
-      const response = await axios.get("https://portfolio-db.khalil-dev.me/feedback/all");
+      const response = await axios.get("https://khalil-webdev.de/feedback/all");
       setTestimonials(response.data);
     } catch (error) {
       console.error("Error fetching testimonials:", error);
@@ -46,7 +46,7 @@ export const TestimonialsProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   const addTestimonial = async (newTestimonial: ITestimonials) => {
     try {
-      await axios.post("https://portfolio-db.khalil-dev.me/feedback/add", newTestimonial);
+      await axios.post("https://khalil-webdev.de/feedback/add", newTestimonial);
        setIsTestimonialsAdded(true)
       await fetchTestimonials();  
 
