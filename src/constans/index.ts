@@ -20,7 +20,9 @@ import reactTs from "../assets/company/reactTs.png";
 import nodeJs from "../assets/company/nodeJs.jpg";
 import cryptoBild from "../assets/cryptoBild.png";
 import aehBild from "../assets/aeh.png";
-import Aiwebkraft from "../assets/ai-webkraft.png"
+import Aiwebkraft from "../assets/ai-webkraft.png";
+import autoService from "../assets/autoAervice.png";
+
 
 export const navLinks = [
   {
@@ -258,6 +260,42 @@ const projects = [
     image: Aiwebkraft,
     source_code_link: "",
     link: "https://portofolio-ecru-five.vercel.app/de",
+  },
+  {
+    id: "4",
+    name: "autoService",
+    description:
+      "Die Website https://aundoautoservice.de/ von AutoService A&O bietet umfassende Dienstleistungen rund ums Auto, darunter An- und Verkauf von Fahrzeugen, flexible Autovermietung sowie professionellen Werkstatt-Service.",
+    tags: [
+      {
+        id: "1",
+        name: "nextJs",
+        color: "blue-text-gradient",
+      },
+      {
+        id: "2",
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+      {
+        id: "3",
+        name: "MongoDb",
+        color: "pink-text-gradient",
+      },
+      {
+        id: "4",
+        name: "NodeJs",
+        color: "pink-text-gradient",
+      },
+      {
+        id: "5",
+        name: "jwt authentication",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: autoService,
+    source_code_link: "",
+    link: "https://aundoautoservice.de",
   },
 ];
 
